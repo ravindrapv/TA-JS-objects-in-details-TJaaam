@@ -1,23 +1,19 @@
-const testData = {
-    title: 'Where is the capital of Jordan',
-    options: ['Tashkent', 'Amaan', 'Kuwait City', 'Nairobi'],
-    correctAnswerIndex: 1,
-  };
 
-function isAnswerCorrect(ans){
-    if (correctAnswerIndex == ans) {
-        return true
-    }else{
-        return false
+let title = 'Where is the capital of Jordan';
+let options = ['Tashkent', 'Amaan', 'Kuwait City', 'Nairobi'];
+let correctAnswerIndex = 1;
+
+
+function isAnswerCorrect(index) {
+    if (correctAnswerIndex === index) {
+        return true;
+    } else {
+        return false;
     }
 }
-isAnswerCorrect(1);
+    isAnswerCorrect(1);
 
 
-function  getCorrectAnswer(){
-    
-}
-
-
-
-
+    function getCorrectAnswer() {
+        return options[correctAnswerIndex];
+    }
