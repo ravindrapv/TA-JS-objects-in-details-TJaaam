@@ -10,8 +10,8 @@
 //      return  index === this.correctAnswerIndex;
 //     },
 //     getCorrectAnswer: function(options){
-//       return this.options[correctAnswerIndex];
-//     }
+//       return this.options[this.correctAnswerIndex];
+//     },
 // };
 
 // function Question(title,options,correctAnswerIndex){
@@ -21,9 +21,6 @@
 //     newQuestion.correctAnswerIndex = correctAnswerIndex;
 //     return newQuestion;
 // }
-
-
-
 
 // pesuso class pattern
 
@@ -38,8 +35,8 @@ Question.prototype = {
         return  index === this.correctAnswerIndex;
        },
        getCorrectAnswer: function(options){
-         return this.options[correctAnswerIndex];
-       }
+         return this.options[this.correctAnswerIndex];
+       },
 }
 
 let firstQuestion = new Question(
@@ -53,7 +50,13 @@ let firstQuestion = new Question(
     2
   );
 
+ console.log(firstQuestion);
+  console.group(firstQuestion.title);
+  console.log(firstQuestion.correctAnswerIndex);
+  console.log(firstQuestion.getCorrectAnswer());
 
-  console.log(firstQuestion);
-  console.log(Question.getCorrectAnswer(1));
-  console.log(title);
+  console.log(secondQuestion);
+  console.group(secondQuestion.title);
+  console.log(secondQuestion.correctAnswerIndex);
+  console.log(secondQuestion.getCorrectAnswer());
+  
