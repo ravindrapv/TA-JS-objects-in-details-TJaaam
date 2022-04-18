@@ -29,7 +29,7 @@ class User{
         this.age = age;
     }
     sayHello(){
-        alert(`Welcome ${user}`);
+        return alert(`Welcome ${this.user}`);
     }
 }
 // 9. Check by creating two instance of the class using data of two different persons and re-assign the value of `personOne` and `personTwo`
