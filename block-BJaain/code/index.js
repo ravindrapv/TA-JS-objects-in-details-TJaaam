@@ -1,17 +1,17 @@
 console.log(this.document === document); // Output
 
-// ------------
+// ------------true
 
 console.log(this === window); //Output
 
-// ------------
+// ------------true
 
 var myFunction = function () {
   console.log(this);
 };
 myFunction(); // Output
 
-// ------------
+// ------------its points to the windows
 
 function f1() {
   'use strict';
@@ -19,16 +19,16 @@ function f1() {
 }
 console.log(f1() === window); //Output
 
-// ------------
+// ---undefined---------false
 
 function foo() {
   console.log('Simple function call');
   console.log(this === window);
 }
 
-foo(); //Output ??
+foo(); //Output ?? 
 
-// ------------
+// -------Simple function call-----true
 
 // This for IIFE
 (function () {
@@ -36,7 +36,8 @@ foo(); //Output ??
   console.log(this === window);
 })(); //Output
 
-// ------------
+// --------Anonymous function invocation----true
+
 
 var myObject = {};
 myObject.someMethod = function () {
