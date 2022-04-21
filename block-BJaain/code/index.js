@@ -45,7 +45,7 @@ myObject.someMethod = function () {
 };
 myObject.someMethod(); //Value Of This
 
-// ------------
+// ------------someMethod function
 
 function Person(fn, ln) {
   this.firstName = fn;
@@ -57,9 +57,9 @@ function Person(fn, ln) {
 }
 
 let person = new Person('John', 'Reed');
-person.displayName(); // Output
+person.displayName(); // Output  is John Reed
 let person2 = new Person('Paul', 'Adams');
-person2.displayName(); // Output
+person2.displayName(); // Output is paul Adams
 
 // ------------
 
@@ -77,10 +77,10 @@ let user = {
   },
 };
 
-user.foo(); // Output
-let fun1 = user.foo1;
-fun1(); // Output ??
-user.foo1(); // Output ??
+user.foo(); // Output is Simple function call
+let fun1 = user.foo1; 
+fun1(); // Output is true 
+user.foo1(); // Output false
 
 // ------------
 
@@ -92,13 +92,13 @@ var obj = {
   },
 };
 
-obj.getX(); // Output ??
+obj.getX(); // Output 81
 
 var retrieveX = obj.getX;
-retrieveX(); //Output ??
+retrieveX(); //Output 9
 
 var boundGetX = retrieveX.bind(obj);
-boundGetX(); // Output ??
+boundGetX(); // Output 81
 
 // ------------
 
@@ -112,11 +112,11 @@ function Person(fn, ln) {
 }
 
 let person = new Person('John', 'Reed');
-person.displayName(); // Output
+person.displayName(); // Output Name John Reed
 let person2 = new Person('Paul', 'Adams');
-person2.displayName(); // Output
+person2.displayName(); // Output Name Paul Adams
 
-person.displayName.call(person2); // Output ??
+person.displayName.call(person2); // Output Name Paul Adams
 
 // ------------
 
@@ -134,20 +134,21 @@ obj.getThis4 = obj.getThis2.bind(obj);
 
 // Output
 obj.getThis();
+// points to window
 
-// Output
+// Output // points to window
 obj.getThis.call(a);
 
-// Output
+// Output //obj.getThis2(); 
 obj.getThis2();
 
-// Output
+// Output // {a: 'a'}
 obj.getThis2.call(a);
 
-// Output
+// Output //points to window
 obj.getThis3();
 
-// Output
+// Output //{getThis: ƒ, getThis2: ƒ, getThis3: ƒ, getThis4: ƒ}
 obj.getThis4();
 
 // -------------
@@ -159,10 +160,10 @@ let person = {
   },
 };
 
-person.greet(); // output
+person.greet(); // output hello, Jay
 
 let greet = person.greet;
-greet(); // output
+greet(); // output hello
 
 // -------------
 
@@ -179,14 +180,14 @@ let person = {
     return this.name;
   },
 };
-console.log(person.details.print()); // output?
-console.log(person.print()); // output?
+console.log(person.details.print()); // output Jay Details
+console.log(person.print()); // output Jay Person
 
 let name1 = person.print;
 let name2 = person.details;
 
-console.log(name1()); // output?
-console.log(name2.print()); // output?
+console.log(name1()); // output 
+console.log(name2.print()); // output Jay Person
 
 // --------
 
@@ -202,7 +203,7 @@ let outerFn = function () {
 
 outerFn()();
 
-// -----------
+// -----------Uncaught ReferenceError: innerItem is not defined
 
 let object = {
   data: [1, 2, 3],
@@ -228,6 +229,16 @@ let object = {
 object.double();
 object.doubleArrow();
 
+// {data: Array(3), dataDouble: Array(3), double: ƒ, doubleArrow: ƒ}
+// VM175:8 Window {0: Window, window: Window, self: Window, document: document, name: '', location: Location, …}
+// VM175:8 Window {0: Window, window: Window, self: Window, document: document, name: '', location: Location, …}
+// VM175:8 Window {0: Window, window: Window, self: Window, document: document, name: '', location: Location, …}
+// VM175:13 this inside of outerFn doubleArrow()
+// VM175:14 {data: Array(3), dataDouble: Array(3), double: ƒ, doubleArrow: ƒ}
+// VM175:16 {data: Array(3), dataDouble: Array(3), double: ƒ, doubleArrow: ƒ}
+// VM175:16 {data: Array(3), dataDouble: Array(3), double: ƒ, doubleArrow: ƒ}
+// VM175:16 {data: Array(3), dataDouble: Array(3), double: ƒ, doubleArrow: ƒ}
+// (3) [2, 4, 6]
 // --------------
 
 let bobObj = {
@@ -239,7 +250,7 @@ function print() {
 }
 
 let printNameBob = print.bind(bobObj);
-console.log(printNameBob()); // output??
+console.log(printNameBob()); // output is Bob
 
 // -------------------
 
@@ -258,7 +269,7 @@ let obj2 = {
 };
 
 let getSecondData = obj2.printSecondData.bind(obj1);
-console.log(getSecondData()); // Output and why ???
+console.log(getSecondData()); // Output 2
 
 // --------------
 
@@ -269,7 +280,7 @@ const call = {
   },
 };
 
-call.says(); // output ???
+call.says(); // output Hey, mom just called.
 
 // -----------------
 
@@ -282,7 +293,7 @@ const call = {
 
 let newCall = call.says;
 
-newCall(); // output ???
+newCall(); // output Hey, undefined just called.
 
 //  -----------------
 
@@ -300,4 +311,4 @@ const call = {
 
 let newCall = call.anotherCaller;
 
-newCall(); // output ??
+newCall(); // output undefined called, too!
