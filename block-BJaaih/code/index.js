@@ -4,6 +4,9 @@
 */
 
 // myMap function goes here
+function myMap(){
+  return Array.prototype();
+}
 
 // Test the myMap function you created above
 
