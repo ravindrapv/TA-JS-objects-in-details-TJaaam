@@ -4,8 +4,10 @@
 */
 
 // myMap function goes here
-function myMap(){
-  return Array.prototype();
+Array.prototype.mymap = function(callback) {
+  for (let i = 0; i < this.length; i++) {
+     callback(this[i], i, this);
+  }
 }
 
 // Test the myMap function you created above
