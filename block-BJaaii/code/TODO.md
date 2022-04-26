@@ -13,6 +13,11 @@ Queue
 Data:
 
 - `stack`
+```js
+class Stack{
+    
+}
+```
 
 Methods:
 

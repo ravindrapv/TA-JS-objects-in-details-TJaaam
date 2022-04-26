@@ -15,35 +15,31 @@
 // - `stack`
 
 class Stack{
-    constructor(stack){
-        this.stack = stack
+    constructor(){
+        this.stack = [];
 
     }
     push(val){
-        this.val = val.push(this.stack);
-        return this.val;
+       this.stack.push(val);
+       return this.val;
     }
     pop(){
-        return this.val.pop();
+        return this.stack.pop();
     }
-    peek(optional){
-        return this.val;
+    peek(index = this.stack.length - 1){
+        return this.stack[index]
     }
     reverse(){
-       return this.val.reverse();
+       return this.stack.reverse();
     }
     isEmpty(){
-        if (this.val.length === 0) {
-            return true;
-        } else {
-            return false
-        }
+    return !(this.stack.length > 0)
     }
     displayStack(){
-        return this.stack.String(this.val);
+        return this.stack.join(" ");
     }
     length(){
-        return this.val.length;
+        return this.stack.length;
     }
 }
 
