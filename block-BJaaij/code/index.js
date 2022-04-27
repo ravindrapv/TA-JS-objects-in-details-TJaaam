@@ -17,18 +17,13 @@ class Book{
         this.Title  = Title;
         this.Category = Category;
         this.Author = Author;
-        this.isRead = function(){
-            return true;
-        }
-        this.finishedDate = function(){
-            return Date.now();
-        }
+        this.isRead = false;
+        this.finishedDate = null;
+    }
+    markBookAsRead(){
+        return this.isRead = true;
     }
 }
-let markBookAsRead = new BookList("the dark nigth","hororr","ravi");
-console.log(markBookAsRead);
-markBookAsRead.isRead();
-markBookAsRead.finishedDate();
 // - `markBookAsRead` when called will change the `isRead` property on the book to be `true`. It will also change the `finishedDate` to be the `Date.now()` when this function is called.
 
 // #### BookList should have the following properties:
@@ -36,27 +31,29 @@ markBookAsRead.finishedDate();
 // 1. An array of all the Books
 // 2. Current read book index
 class BookList{
-    constructor(Book,index){
-        this.Book = Array[Book];
-        this.index = Array[index];
+    constructor(){
+        this.books = [];
+        this.currentIndexBook = 0;
     }
-    add([Book]){
-       return  this.Book = Book;
-
+    add(books = []){
+     this.books = this.books.concat(books)
+       return this.books;
     }
     getCurrentBook(){
-        return this.Book[this.index]
+        return this.books[this.currentIndexBook]
     }
     getNextBook(){
-        return this.Book[this.index[1]];
+        return this.books[this.currentIndexBook + 1]
     }
     getPrevBook(){
-        return this.Book[this.index[0]];
+        return this.books[this.currentIndexBook - 1]
     }
     changeCurrentBook(updateBook){
-        return this.Book = updateBook;
+        this.currentIndexBook = updateBook;
+        return this.currentIndexBook;
     }
 }
+
 // #### BookList Methods
 
 // - [] `add([Book])` will accept an array (list of books). Once the method is called the book will added to the list.
@@ -66,3 +63,13 @@ class BookList{
 // - [] `changeCurrentBook` should accept one parameter and update the current index.
 
 // After creating the Book and BookList class create 5 book object and add it to list. Test all the methods in Book and BookList class.
+
+
+book1 = new Book("Amit Garg","Junior Level Books","Reader's Zone ");
+book2 = new Book("Lalit Kumar","Client Server Computing"," Sun India Publications");
+book3 = new Book("Vinay Kumar Singha","Mobile Computing","K Nath & Sons, Meerut  ");
+book4 = new Book("Sharad Kumar Verma","Client Server Computing"," Sun India Publications");
+book5 = new Book("Gunjan Verma","Computer Networks"," Thakur Publications ");
+
+let library = new BookList();
+library.add(book1,book2,book3,book4,book5);
