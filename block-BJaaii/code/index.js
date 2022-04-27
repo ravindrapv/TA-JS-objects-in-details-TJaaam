@@ -14,33 +14,32 @@
 
 // - `stack`
 
-class Stack{
-    constructor(){
-        this.stack = [];
-
-    }
-    push(val){
-       this.stack.push(val);
-       return this.val;
-    }
-    pop(){
-        return this.stack.pop();
-    }
-    peek(index = this.stack.length - 1){
-        return this.stack[index]
-    }
-    reverse(){
-       return this.stack.reverse();
-    }
-    isEmpty(){
-    return !(this.stack.length > 0)
-    }
-    displayStack(){
-        return this.stack.join(" ");
-    }
-    length(){
-        return this.stack.length;
-    }
+class Stack {
+  constructor() {
+    this.stack = [];
+  }
+  push(val) {
+    this.stack.push(val);
+    return this.val;
+  }
+  pop() {
+    return this.stack.pop();
+  }
+  peek(index = this.stack.length - 1) {
+    return this.stack[index];
+  }
+  reverse() {
+    return this.stack.reverse();
+  }
+  isEmpty() {
+    return !(this.stack.length > 0);
+  }
+  displayStack() {
+    return this.stack.join(" ");
+  }
+  get length() {
+    return this.stack.length;
+  }
 }
 
 
@@ -61,8 +60,8 @@ class Stack{
 
 // ```js
 let myStack = new Stack();
-myStack.push('One');
-myStack.push('Two');
+myStack.push("One");
+myStack.push("Two");
 console.log(myStack.length); // 2
 console.log(myStack.peek()); // "Two"
 console.log(myStack.peek(0)); // "One"
@@ -81,7 +80,32 @@ console.log(myStack.isEmpty()); // true
 // Data:
 
 // - `queue`
-
+class Queue {
+  constructor() {
+    this.queue = [];
+  }
+  enqueue(item) {
+    return this.queue.push(item);
+  }
+  dequeue() {
+    return this.queue.shift();
+  }
+  peek(index = this.queue.length - 1) {
+    return this.queue[index];
+  }
+  reverse() {
+    return this.queue.reverse();
+  }
+  isEmpty() {
+    return !(this.queue.length > 0);
+  }
+  displayQueue() {
+    return this.queue.join(" ");
+  }
+  get length() {
+    return this.queue.length;
+  }
+}
 // Methods:
 
 // - `enqueue`(item): Adds the item at the end of the queue
@@ -96,20 +120,18 @@ console.log(myStack.isEmpty()); // true
 
 // #### Test
 
-// ```js
-// let atmQueue = new Queue();
-// atmQueue.enqueue('Aman');
-// atmQueue.enqueue('John');
-// atmQueue.enqueue('Rohan');
-// console.log(atmQueue.displayQueue()); // "Aman John Rohan"
-// console.log(atmQueue.length); // 3
-// console.log(atmQueue.peek()); // "Aman"
-// console.log(atmQueue.peek(1)); // "John"
-// atmQueue.dequeue();
-// console.log(atmQueue.length); // 2
-// console.log(atmQueue.peek()); // 'John'
-// console.log(atmQueue.isEmpty()); // false
-// atmQueue.dequeue();
-// atmQueue.dequeue();
-// console.log(atmQueue.isEmpty()); // true
-// ```
+let atmQueue = new Queue();
+atmQueue.enqueue('Aman');
+atmQueue.enqueue('John');
+atmQueue.enqueue('Rohan');
+console.log(atmQueue.displayQueue()); // "Aman John Rohan"
+console.log(atmQueue.length); // 3
+console.log(atmQueue.peek()); // "Aman"
+console.log(atmQueue.peek(1)); // "John"
+atmQueue.dequeue();
+console.log(atmQueue.length); // 2
+console.log(atmQueue.peek()); // 'John'
+console.log(atmQueue.isEmpty()); // false
+atmQueue.dequeue();
+atmQueue.dequeue();
+console.log(atmQueue.isEmpty()); // true

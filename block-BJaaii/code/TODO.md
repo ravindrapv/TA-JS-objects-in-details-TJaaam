@@ -14,8 +14,32 @@ Data:
 
 - `stack`
 ```js
-class Stack{
-    
+class Stack {
+  constructor() {
+    this.stack = [];
+  }
+  push(val) {
+    this.stack.push(val);
+    return this.val;
+  }
+  pop() {
+    return this.stack.pop();
+  }
+  peek(index = this.stack.length - 1) {
+    return this.stack[index];
+  }
+  reverse() {
+    return this.stack.reverse();
+  }
+  isEmpty() {
+    return !(this.stack.length > 0);
+  }
+  displayStack() {
+    return this.stack.join(" ");
+  }
+  length() {
+    return this.stack.length;
+  }
 }
 ```
 
@@ -56,6 +80,33 @@ console.log(myStack.isEmpty()); // true
 Data:
 
 - `queue`
+```js
+class Queue {
+  constructor() {
+    this.queue = [];
+  }
+  enqueue(item) {
+    return this.queue.push(item);
+  }
+  dequeue() {
+    return this.queue.shift();
+  }
+  peek(index = this.queue.length - 1) {
+    return this.queue[index];
+  }
+  reverse() {
+    return this.queue.reverse();
+  }
+  isEmpty() {
+    return !(this.queue.length > 0);
+  }
+  displayQueue() {
+    return this.queue.join(" ");
+  }
+  length() {
+    return this.queue.length;
+  }
+```
 
 Methods:
 
