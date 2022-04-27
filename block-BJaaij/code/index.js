@@ -72,4 +72,4 @@ book4 = new Book("Sharad Kumar Verma","Client Server Computing"," Sun India Publ
 book5 = new Book("Gunjan Verma","Computer Networks"," Thakur Publications ");
 
 let library = new BookList();
-library.add(book1,book2,book3,book4,book5);
+library.add([book1,book2,book3,book4,book5]);
