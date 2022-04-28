@@ -57,10 +57,6 @@ body{
     line-height: 1.6;
 }
 
-header{
-
-}
-
 .container{
 max-width: 80%;
 margin: 0 auto;
@@ -76,6 +72,10 @@ h1{
     font-size: 4rem;
     text-align: center;
     font-weight: 900;
+}
+h2{
+    color: green;
+    font-weight: 600;
 }
 small{
     color: blue;
@@ -93,10 +93,37 @@ input{
 button{
     font-size: 1.2rem;
     text-align: center;
-    width: 80%;
-    padding: 0.5rem;
-    background-color: rgb(129, 12, 238);
-    margin: 1 rem;
+    width: 10rem;
+    padding: 1rem;
+    background-color: #F47269;
     color: #ffff;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+    border: none;
+}
 
+.btn{
+    width: 10rem;
+    height: 3rem;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    background-color:black;
+}
+.books{
+    text-align: center;
+}
+.books img{
+    width: 15rem;
+    height: 20rem;
+}
+
+.flex-wrap{
+    flex-wrap: wrap;
+}
+.book_List{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 1rem;
+    padding: 1rem;
 }
